@@ -1,0 +1,122 @@
+
+
+<!-- NOT PART OF THE FORUM ! USES JS-->
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style>
+caption.cap
+{color:grey;text-decoration:underline;font-size:300%;}
+td
+{border:0px solid #000000}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>New User Registration</title>
+</head>
+
+
+
+<body>
+<form method="post" action="doesntexist.php">  
+<table style="width:65% ;border:5px solid grey;margin-left:auto;margin-right:auto;padding:10px" >
+<tr>
+<td>
+Required fields are maked with <span style="color:red;">*</span>
+</td>
+</tr>
+<tr>
+<caption class="cap">New User Sign Up</caption>
+<td>
+Name :
+</td>
+<td>
+<input type="text" id="name" name="name" >
+<td>
+<span style="color:red;align-items:left;">*</span>
+<span id="name1"></span>
+</td>
+</td>
+</tr>
+<tr>
+<td>
+Password :
+</td>
+<td>
+<input type="password" name="password">
+<span style="color:red;">*</span>
+</td>
+</tr>
+<tr>
+<td>
+Email ID
+</td>
+<td>
+<input type="email" name="email"  >
+<span style="color:red;align-items:left;">*</span>
+
+</td>
+</tr>
+<tr>
+<td>
+Age
+</td>
+<td>
+<input type="number" name="age" id="age" >
+
+<span style="color:red;align-items:left;">*</span>
+<td>
+<span id="age1" style="visibility:hidden">Please enter a proper age </span>
+</td>
+</td>
+</tr>
+<tr>
+<td>
+Address
+</td>
+<td>
+<textarea name="address" rows="10" cols="23">
+
+</textarea>
+</td>
+</tr>
+<tr>
+<td>
+Submit
+</td>
+<td>
+<input type="submit" name="submit" value="Submit!" onclick="return validate()">
+</td>
+</tr>
+</table>
+
+</form>
+
+<script>
+	function validate()
+		{var x;var text;		
+		x=document.getElementById("age").value;
+		
+		if(x<18 || x>100||isNaN(x))
+			{text="Please enter an age between 18 and 100";
+		document.getElementById("age1").style.visibility="visible";
+		return false;}
+		
+		x=document.getElementById("name").value;
+		//document.write(x.length);
+		if(x.length>10 ||x.length==0)
+		{text="Please dont go over the size limit/Dont leave it blank";
+		document.getElementById("name1").innerHTML=text;
+		return false;}
+		
+		
+		//document.write(text);
+		
+		//window.alert(text);
+			
+		//document.write(text);
+}
+</script>
+</body>
+</html>
